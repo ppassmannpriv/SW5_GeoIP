@@ -1,5 +1,5 @@
 <?php
-
+/* will require zip for updates... or just manually? dunon lol finish this already you lazy bum. */
 class Shopware_Plugins_Frontend_ScriptkidGeoip_Bootstrap extends Shopware_Components_Plugin_Bootstrap
 {
   private $dataFile = false;
@@ -26,6 +26,7 @@ class Shopware_Plugins_Frontend_ScriptkidGeoip_Bootstrap extends Shopware_Compon
     $this->importData();
 
     //set up Cronjob for monthly update of database files
+    $this->createCronjobs();
 
     return true;
 
@@ -40,6 +41,8 @@ class Shopware_Plugins_Frontend_ScriptkidGeoip_Bootstrap extends Shopware_Compon
 
   private function getDatafile()
   {
+    //http://geolite.maxmind.com/download/geoip/database/GeoLite2-City-CSV.zip
+    //http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country-CSV.zip
     //get file from storage or update it from maxmind.
   }
 
@@ -55,6 +58,12 @@ class Shopware_Plugins_Frontend_ScriptkidGeoip_Bootstrap extends Shopware_Compon
   {
     //make a table
     //import maxmind stuff
+
+    return true;
+  }
+
+  private function createCronjobs()
+  {
 
     return true;
   }
